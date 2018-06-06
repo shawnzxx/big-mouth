@@ -3,12 +3,11 @@
 /**
  * Module dependencies.
  */
+const APP_ROOT = '../../';
 const _ = require('lodash');
 
-const APP_ROOT = '../../';
-
-let we_invoke_get_index = function () {
-    let handler = require(`${APP_ROOT}/functions/get-index`).handler;
+let viaHandler = function (event, functionName) {
+    let handler = require(`${APP_ROOT}/functions/${functionName}`).handler;
 
     return new Promise((resolve, reject) => {
         let context = {};
@@ -23,10 +22,24 @@ let we_invoke_get_index = function () {
                 resolve(response);
             }
         };
-        handler({}, context, callback);
+
+        handler(event, context, callback);
     });
 };
 
+let we_invoke_get_index = () => viaHandler({}, 'get-index');
+let we_invoke_get_restaurants = () => viaHandler({}, 'get-restaurants');
+
+let we_invoke_search_restaurants = (theme) => {
+    let event = {
+        body: JSON.stringify({theme: theme})
+    };
+    return viaHandler(event, 'search-restaurants');
+};
+
+
 module.exports = {
-    we_invoke_get_index
+    we_invoke_get_index,
+    we_invoke_get_restaurants,
+    we_invoke_search_restaurants
 };

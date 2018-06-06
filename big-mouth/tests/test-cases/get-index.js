@@ -7,12 +7,12 @@
 const co = require('co');
 const expect = require('chai').expect;
 const when = require('../steps/when');
-const init = require('../steps/init').init;
+const init = require('../steps/init');
 const cheerio = require('cheerio');
 
 describe('When we invoke Get / endpoint', co.wrap(function* () {
     before(co.wrap(function* () {
-        yield init();
+        yield init.init();
     }));
 
     it('should return the index page with 8 restaurants', co.wrap(function* () {
