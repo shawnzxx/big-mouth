@@ -4,7 +4,8 @@
   "description": "",
   "main": "handler.js",
   "scripts": {
-    "integration-test": "set TEST_MODE=handler&& mocha tests/test-cases --reporter spec"
+    "integration-test": "set TEST_MODE=handler& mocha tests/test-cases --reporter spec",
+    "acceptance-test": "set TEST_MODE=http& set TEST_ROOT=https://d8rqdddzxj.execute-api.us-east-1.amazonaws.com/dev& mocha tests/test-cases --reporter spec"
   },
   "author": "",
   "license": "ISC",

@@ -14,7 +14,9 @@ const URL = require('url');
 const mode = process.env.TEST_MODE;
 
 let respondFrom = function (httpRes) {
-    let contentType = _.get(httpRes, 'headers.Content-Type', 'application/json');
+    //superagent will return all carmel case into lower case like headers.content-type
+    let contentType = _.get(httpRes, 'headers.content-type', 'application/json');
+    console.log(`http response ${JSON.stringify(httpRes.headers)}`);
     let body =
         contentType === 'application/json'
             ? httpRes.body
@@ -76,6 +78,8 @@ let viaHttp = co.wrap(function* (relPath, method, opts) {
     }
 });
 
+//check how to How to set Environment variables within package.json
+//https://stackoverflow.com/questions/25112510/how-to-set-environment-variables-from-within-package-json-node-js
 let viaHandler = function (event, functionName) {
     let handler = require(`${APP_ROOT}/functions/${functionName}`).handler;
     console.log(`invoking via handler function ${functionName}`);

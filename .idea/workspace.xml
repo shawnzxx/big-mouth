@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2edcb433-13b0-45ef-b0ce-5ce822e603d1" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-mouth/functions/get-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/big-mouth/functions/get-index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/big-mouth/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/big-mouth/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/big-mouth/tests/steps/when.js" beforeDir="false" afterPath="$PROJECT_DIR$/big-mouth/tests/steps/when.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big-mouth/tests/test-cases/get-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/big-mouth/tests/test-cases/get-index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,11 +30,8 @@
       <file leaf-file-name="when.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/big-mouth/tests/steps/when.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="89" column="56" lean-forward="true" selection-start-line="89" selection-start-column="56" selection-end-line="89" selection-end-column="56" />
-              <folding>
-                <element signature="e#144#601#0" />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="16" column="86" selection-start-line="16" selection-start-column="86" selection-end-line="16" selection-end-column="86" />
             </state>
           </provider>
         </entry>
@@ -44,8 +39,8 @@
       <file leaf-file-name="get-index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/big-mouth/functions/get-index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+            <state relative-caret-position="264">
+              <caret line="70" column="18" lean-forward="true" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -86,6 +81,7 @@
       <find>signHttp</find>
       <find>require('superagent-promise')</find>
       <find>invoking via</find>
+      <find>TEST_ROOT</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -109,9 +105,9 @@
         <option value="$PROJECT_DIR$/big-mouth/tests/test-cases/get-restaurants.js" />
         <option value="$PROJECT_DIR$/big-mouth/tests/test-cases/search-restaurants.js" />
         <option value="$PROJECT_DIR$/big-mouth/package.json" />
-        <option value="$PROJECT_DIR$/big-mouth/tests/steps/when.js" />
-        <option value="$PROJECT_DIR$/big-mouth/functions/get-index.js" />
         <option value="$PROJECT_DIR$/big-mouth/tests/test-cases/get-index.js" />
+        <option value="$PROJECT_DIR$/big-mouth/functions/get-index.js" />
+        <option value="$PROJECT_DIR$/big-mouth/tests/steps/when.js" />
       </list>
     </option>
   </component>
@@ -251,12 +247,12 @@
       <workItem from="1528295011489" duration="4471000" />
       <workItem from="1528299705418" duration="294000" />
       <workItem from="1528530709481" duration="25000" />
-      <workItem from="1529828312368" duration="4972000" />
+      <workItem from="1529828312368" duration="6747000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49125000" />
+    <option name="totallyTimeSpent" value="50900000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -280,7 +276,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.30497238" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.37900552" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
@@ -532,13 +528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-mouth/serverless.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/big-mouth/node_modules/superagent/lib/node/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -577,10 +566,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/big-mouth/serverless.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="24" column="23" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/big-mouth/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        <state relative-caret-position="147">
+          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -593,18 +589,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/big-mouth/functions/get-index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+        <state relative-caret-position="264">
+          <caret line="70" column="18" lean-forward="true" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/big-mouth/tests/steps/when.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="89" column="56" lean-forward="true" selection-start-line="89" selection-start-column="56" selection-end-line="89" selection-end-column="56" />
-          <folding>
-            <element signature="e#144#601#0" />
-          </folding>
+        <state relative-caret-position="210">
+          <caret line="16" column="86" selection-start-line="16" selection-start-column="86" selection-end-line="16" selection-end-column="86" />
         </state>
       </provider>
     </entry>
