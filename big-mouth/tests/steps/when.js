@@ -64,6 +64,22 @@ let viaHttp = co.wrap(function* (relPath, method, opts) {
             signHttpRequest(url, httpReq);
         }
 
+        //test lodash function result
+        //https://codepen.io/travist/full/jrBjBz/
+        // let user = {firstname: 'Zhang', lastname: 'Xiaoxiao', idToken: '12345'};
+        // let theme = 'cartoon';
+        // let body = JSON.stringify({ theme });
+        // let auth = user.idToken;
+        // let opts = { body, auth };
+        // let bodyOut = _.get(opts, "body");
+        // let authHeaderOut = _.get(opts, 'auth');
+        // result = {theme };
+
+        let authHeader = _.get(opts, 'auth');
+        if(authHeader){
+            httpReq.set('Authorization', authHeader);
+        }
+
         let res = yield httpReq;
         return respondFrom(res);
     } catch (err) {
@@ -119,13 +135,14 @@ let we_invoke_get_restaurants = co.wrap(function* () {
     return res;
 });
 
-let we_invoke_search_restaurants = co.wrap(function* (theme) {
+let we_invoke_search_restaurants = co.wrap(function* (user, theme) {
     let body = JSON.stringify({ theme });
+    let auth = user.idToken;
 
     let res =
         mode === 'handler'
             ? viaHandler({ body }, 'search-restaurants')
-            : viaHttp('restaurants/search', 'POST', { body });
+            : viaHttp('restaurants/search', 'POST', { body, auth });
 
     return res;
 });
