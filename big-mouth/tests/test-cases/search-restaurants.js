@@ -3,11 +3,12 @@
 /**
  * Module dependencies.
  */
- const co = require('co');
- const expect = require('chai').expect;
- const init = require('../steps/init');
- const when = require('../steps/when');
- const given = require('../steps/given');
+const co = require('co');
+const expect = require('chai').expect;
+const init = require('../steps/init');
+const when = require('../steps/when');
+const given = require('../steps/given');
+const tearDown = require('../steps/teardown')
 
 describe('Given an authentication user', co.wrap(function* () {
     let user;
@@ -15,6 +16,10 @@ describe('Given an authentication user', co.wrap(function* () {
         yield init.init();
         user = yield given.an_authenticated_user();
     }));
+    
+    after(co.wrap(function* () {
+      yield tearDown.an_authenticated_user(user);
+    }))
 
     describe("When we invoke the POST /restaurants/search endpoint with theme 'cartoon'", co.wrap(function* () {
         it('should return an array of 4 restaurants', co.wrap(function* () {
