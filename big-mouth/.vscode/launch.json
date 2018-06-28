@@ -7,7 +7,25 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "run get-restaurants function",
+            "name": "get-restaurants",
+            "program": "${workspaceFolder}/node_modules/serverless/bin/serverless",
+            "args": [
+                "invoke",
+                "local",
+                "-f",
+                "get-restaurants",
+                "--data",
+                "{}" // You can use this argument to pass data to the function to help with the debug
+            ],
+            "env": {
+                "defaultTotalRestaurants": 8,
+                "restaurants_table": "restaurants"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "search-restaurants",
             "program": "${workspaceFolder}/node_modules/serverless/bin/serverless",
             "args": [
                 "invoke",
@@ -15,10 +33,29 @@
                 "-f",
                 "search-restaurants",
                 "--path",
-                "data.json" // You can use this argument to pass data to the function to help with the debug
+                "examples/search-restaurants.json"
             ],
             "env": {
                 "restaurants_table": "restaurants"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "get-index",
+            "program": "${workspaceFolder}/node_modules/serverless/bin/serverless",
+            "args": [
+                "invoke",
+                "local",
+                "-f",
+                "get-index",
+                "-d",
+                "{}"
+            ],
+            "env": {
+                "restaurants_api": "https://d8rqdddzxj.execute-api.us-east-1.amazonaws.com/dev/restaurants",
+                "cognito_user_pool_id": "us-east-1_BXJNx0zbs",
+                "cognito_client_id": "4bhgqbem4f6p8leiq4fmnals1m"
             }
         }
     ]
