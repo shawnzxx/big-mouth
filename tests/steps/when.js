@@ -36,7 +36,7 @@ let signHttpRequest = (url, httpReq) => {
         path: urlData.pathname
     };
 
-    aws4.sign(opts);
+    aws4.sign(opts); // assumes AWS credentials are available in process.env
 
     httpReq
         .set('Host', opts.headers['Host'])

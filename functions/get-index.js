@@ -5,7 +5,7 @@ const Promise = require("bluebird");
 const fs = Promise.promisifyAll(require("fs"));
 const Mustache = require('mustache');
 const http = require('superagent-promise')(require('superagent'), Promise);
-const aws4 = require('aws4');
+const aws4 = require('aws4')
 const URL = require('url');
 const awscred = Promise.promisifyAll(require('awscred'));
 
@@ -38,16 +38,17 @@ function* getRestaurants() {
 
     if(!process.env.AWS_ACCESS_KEY_ID){
         let cred = (yield awscred.loadAsync()).credentials;
-
+        console.log(cred)
         process.env.AWS_ACCESS_KEY_ID = cred.accessKeyId;
         process.env.AWS_SECRET_ACCESS_KEY = cred.secretAccessKey;
 
+        console.log(`AWS SessionToken from get-index - [${cred.sessionToken}]`)
         if(cred.sessionToken){
             process.env.AWS_SESSION_TOKEN = cred.sessionToken;
         }
     }
 
-    aws4.sign(opts);
+    aws4.sign(opts); // assumes AWS credentials are available in process.env
 
     let httpReq = http
         .get(restaurantsApiRoot)
