@@ -4,8 +4,8 @@
   "description": "",
   "main": "handler.js",
   "scripts": {
-    "integration-test": "set TEST_MODE=handler& mocha tests/test-cases --reporter spec --retries 3 --timeout 5000",
-    "acceptance-test": "set TEST_MODE=http& set TEST_ROOT=https://d8rqdddzxj.execute-api.us-east-1.amazonaws.com/dev& mocha tests/test-cases --reporter spec --retries 3 --timeout 10000"
+    "integration-test": "env TEST_MODE=handler ./node_modules/.bin/mocha tests/test-cases --reporter spec --retries 3 --timeout 10000",
+    "acceptance-test": "env TEST_MODE=http TEST_ROOT=https://d8rqdddzxj.execute-api.us-east-1.amazonaws.com/dev& ./node_modules/.bin/mocha tests/test-cases --reporter spec --retries 3 --timeout 10000"
   },
   "author": "",
   "license": "ISC",
