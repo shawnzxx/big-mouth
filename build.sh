@@ -15,19 +15,19 @@ if [ $# -eq 0 ]; then
   instruction
   exit 1
 
-# ie: build.sh int-test
+# ./build.sh int-test
 elif [ "$1" = "int-test" ] && [ $# -eq 1 ]; then    
   npm install
 
   npm run integration-test
 
-# ie: build.sh acceptance-test
+# ./build.sh acceptance-test
 elif [ "$1" = "acceptance-test" ] && [ $# -eq 1 ]; then
   npm install
 
   npm run acceptance-test
 
-# build.sh deploy dev
+# ./build.sh deploy dev
 elif [ "$1" = "deploy" ] && [ $# -eq 2 ]; then
   STAGE=$2
 
