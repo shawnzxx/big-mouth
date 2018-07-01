@@ -6,7 +6,7 @@ plugins:
 provider:
   name: aws
   runtime: nodejs6.10
-  iamRoleStatements:
+  iamRoleStatements:  # serverless framework default role has create and write to CloudWatch logs, below are add on rules which will be merged into the generated policy
     - Effect: Allow
       Action: dynamodb:scan
       Resource: arn:aws:dynamodb:#{AWS::Region}:#{AWS::AccountId}:table/restaurants
@@ -21,7 +21,7 @@ functions:
       - http:
           path: /
           method: get
-    environment:
+    environment:  #You can add environment variable configuration to a specific function
       restaurants_api: https://d8rqdddzxj.execute-api.us-east-1.amazonaws.com/dev/restaurants
       cognito_user_pool_id: us-east-1_BXJNx0zbs
       cognito_client_id: 4bhgqbem4f6p8leiq4fmnals1m
@@ -32,7 +32,7 @@ functions:
       - http:
           path: /restaurants/
           method: get
-          authorizer: aws_iam
+          authorizer: aws_iam #require that the caller submit the IAM user's access keys in order to be authenticated to invoke your Lambda Function
     environment:
       defaultTotalRestaurants: 8
       restaurants_table: restaurants
@@ -44,7 +44,7 @@ functions:
           path: /restaurants/search
           method: post
           authorizer:
-            arn: arn:aws:cognito-idp:us-east-1:807237341754:userpool/us-east-1_BXJNx0zbs
+            arn: arn:aws:cognito-idp:us-east-1:807237341754:userpool/us-east-1_BXJNx0zbs  # https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html
     environment:
       restaurants_table: restaurants
 

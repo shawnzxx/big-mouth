@@ -28,6 +28,9 @@ let init = co.wrap(function* () {
         process.env.AWS_ACCESS_KEY_ID = cred.accessKeyId;
         process.env.AWS_SECRET_ACCESS_KEY = cred.secretAccessKey;
 
+        // https://docs.amazonaws.cn/en_us/cli/latest/userguide/cli-environment.html
+        // 1: http call need to use Temporary Security Credentials, so all acceptance test will get this value, all integration test wont get this value
+        // 2: for local test awscred will retrieve credential from local aws config file, for aws code deploy will get from ubuntu container's config file.
         console.log(`AWS SessionToken from init - [${cred.sessionToken}]`)
         if(cred.sessionToken){
             process.env.AWS_SESSION_TOKEN = cred.sessionToken;
