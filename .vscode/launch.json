@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Mocha Current File",
+            "name": "Debug handler test-case",
             "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
             "args": [
                 "--timeout",
@@ -20,6 +20,27 @@
             ],
             "env": {
                 "TEST_MODE": "handler"
+            },
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug http test-case",
+            "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+            "args": [
+                "--timeout",
+                "10000",
+                "--reporter",
+                "spec",
+                "--retries",
+                "1",
+                "${file}"
+            ],
+            "env": {
+                "TEST_MODE": "http",
+                "TEST_ROOT": "https://d8rqdddzxj.execute-api.us-east-1.amazonaws.com/dev"
             },
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen"
