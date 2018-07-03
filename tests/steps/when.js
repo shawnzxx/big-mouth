@@ -16,7 +16,7 @@ const mode = process.env.TEST_MODE;
 let respondFrom = function (httpRes) {
     //superagent will return all carmel case into lower case like headers.content-type
     let contentType = _.get(httpRes, 'headers.content-type', 'application/json');
-    console.log(`http response ${JSON.stringify(httpRes.headers)}`);
+    console.log(`http response ${JSON.stringify(httpRes.headers)}`);    // ES6 template string format
     let body =
         contentType === 'application/json'
             ? httpRes.body
@@ -36,13 +36,17 @@ let signHttpRequest = (url, httpReq) => {
         path: urlData.pathname
     };
 
-    aws4.sign(opts); // assumes AWS credentials are available in process.env
+    aws4.sign(opts); // assumes AWS credentials are available in process.env, aws4 sign will use it
+
 
     httpReq
         .set('Host', opts.headers['Host'])
         .set('X-Amz-Date', opts.headers['X-Amz-Date'])
         .set('Authorization', opts.headers['Authorization']);
 
+    //acceptance-test need to invoke api through http, so we need to add temporary security credential to Signing AWS Requests process
+    //temporary security credentials inside X-Amz-Security-Token
+    //https://docs.aws.amazon.com/general/latest/gr/sigv4-add-signature-to-request.html -> search for temporary security credentials
     if (opts.headers['X-Amz-Security-Token']) {
         httpReq.set('X-Amz-Security-Token', opts.headers['X-Amz-Security-Token']);
     }

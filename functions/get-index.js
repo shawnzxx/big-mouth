@@ -47,7 +47,6 @@ function* getRestaurants() {
             process.env.AWS_SESSION_TOKEN = cred.sessionToken;
         }
     }
-
     aws4.sign(opts); // assumes AWS credentials are available in process.env
 
     let httpReq = http
