@@ -43,7 +43,7 @@ function* getRestaurants() {
         process.env.AWS_SECRET_ACCESS_KEY = cred.secretAccessKey;
     }
 
-    aws4.sign(opts); // assumes AWS credentials are available in process.env, aws4 sign will use it
+    aws4.sign(opts); // assumes AWS credentials are available in process.env, aws4 library will use it to sign request
 
     let httpReq = http
         .get(restaurantsApiRoot)

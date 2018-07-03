@@ -48,7 +48,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Lambda get-restaurants",
+            "name": "Debug function get-restaurants",
             "program": "${workspaceFolder}/node_modules/serverless/bin/serverless",
             "args": [
                 "invoke",
@@ -66,7 +66,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Lambda search-restaurants",
+            "name": "Debug function search-restaurants",
             "program": "${workspaceFolder}/node_modules/serverless/bin/serverless",
             "args": [
                 "invoke",
@@ -83,7 +83,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Lambda get-index",
+            "name": "Debug function get-index",
             "program": "${workspaceFolder}/node_modules/serverless/bin/serverless",
             "args": [
                 "invoke",

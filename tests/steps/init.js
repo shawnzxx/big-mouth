@@ -24,7 +24,7 @@ let init = co.wrap(function* () {
 
     if(!process.env.AWS_ACCESS_KEY_ID){
         let cred = (yield awscred.loadAsync()).credentials;
-        console.log(`AWS credential: ${cred}`)
+        console.log(`AWS credential: ${JSON.stringify(cred)}`)
         // https://docs.amazonaws.cn/en_us/cli/latest/userguide/cli-environment.html
         process.env.AWS_ACCESS_KEY_ID = cred.accessKeyId;
         process.env.AWS_SECRET_ACCESS_KEY = cred.secretAccessKey;
